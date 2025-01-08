@@ -1,0 +1,10 @@
+﻿@using Movies.WebUI.Dtos
+@model List<ResultMovieDto>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <p>@item.movieName </p>
+}
