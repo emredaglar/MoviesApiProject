@@ -13,7 +13,7 @@ namespace Movies.DataAccessLayer.Concrete
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=EMRED-PC\\SQLEXPRESS01;database=MoviesApiDb;integrated security=true;TrustServerCertificate=True;");
+			optionsBuilder.UseSqlServer("Server=DD\\SQLEXPRESS02;database=MoviesApiDb;integrated security=true;TrustServerCertificate=True;");
 		}
 
 		public DbSet<Category> Categories { get; set; }

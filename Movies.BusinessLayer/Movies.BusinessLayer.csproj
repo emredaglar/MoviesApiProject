@@ -20,11 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Movies.DataAccessLayer\Movies.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Movies.DtoLayer\Movies.DtoLayer.csproj" />
     <ProjectReference Include="..\Movies.EntityLayer\Movies.EntityLayer.csproj" />
   </ItemGroup>
