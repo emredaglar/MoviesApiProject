@@ -15,5 +15,12 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 		public EfMovieDal(ApiContext context) : base(context)
 		{
 		}
+
+		public int MovieCount()
+		{
+			var context=new ApiContext();
+			int values=context.Movies.Count();
+			return values;
+		}
 	}
 }

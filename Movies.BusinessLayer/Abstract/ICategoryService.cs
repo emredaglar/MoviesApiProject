@@ -9,5 +9,6 @@ namespace Movies.BusinessLayer.Abstract
 {
 	public interface ICategoryService:IGenericService<Category>
 	{
+		
 	}
 }

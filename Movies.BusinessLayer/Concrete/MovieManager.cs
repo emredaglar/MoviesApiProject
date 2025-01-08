@@ -1,5 +1,6 @@
 ﻿using Movies.BusinessLayer.Abstract;
 using Movies.DataAccessLayer.Abstract;
+using Movies.DataAccessLayer.EntityFreamwork;
 using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,15 @@ namespace Movies.BusinessLayer.Concrete
 {
 	public class MovieManager : GenericManager<Movie>, IMovieService
 	{
-		public MovieManager(IGenericDal<Movie> genericDal) : base(genericDal)
+		private readonly IMovieDal _movieDal;
+		public MovieManager(IGenericDal<Movie> genericDal,IMovieDal movieDal) : base(genericDal)
 		{
+			_movieDal = movieDal;
+		}
+
+		public int TMovieCount()
+		{
+			return _movieDal.MovieCount();
 		}
 	}
 }

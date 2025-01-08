@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Movies.BusinessLayer\Movies.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Movies.DtoLayer\Movies.DtoLayer.csproj" />
   </ItemGroup>
 
 </Project>
