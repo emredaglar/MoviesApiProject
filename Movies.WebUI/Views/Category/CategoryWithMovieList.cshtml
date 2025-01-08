@@ -1,0 +1,18 @@
+﻿@using Movies.WebUI.Dtos
+@model List<ResultCategoryWithMovieDto>
+
+<h2>aaaaaaaaaaaaaaaaa</h2>
+<h2>aaaaaaaaaaaaaaaaa</h2>
+<h2>aaaaaaaaaaaaaaaaa</h2>
+<h2>aaaaaaaaaaaaaaaaa</h2>
+<h2>aaaaaaaaaaaaaaaaa</h2>
+@foreach (var item in Model)
+{
+    @foreach (var movie in item.movies)
+    {
+         <h2>@item.categoryName - @movie.MovieName</h2>
+    }
+   
+    
+}
+

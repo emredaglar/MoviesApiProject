@@ -15,11 +15,11 @@ namespace Movies.WebUI.ViewComponents.Movie
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("http://localhost:5106/api/Movie");
+			var responseMessage = await client.GetAsync("http://localhost:5106/api/Category/CategoryWithMovieList");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultMovieDto>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<ResultCategoryWithMovieDto>>(jsonData);
 				return View(values);
 			}
 			return View();

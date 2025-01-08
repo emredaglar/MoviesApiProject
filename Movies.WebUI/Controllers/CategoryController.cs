@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Movies.WebApi.Models;
 using Movies.WebUI.Dtos;
 using Newtonsoft.Json;
 
@@ -25,14 +26,14 @@ namespace Movies.WebUI.Controllers
 			}
 			return View();
 		}
-		public async Task<IActionResult> MovieList()
+		public async Task<IActionResult> CategoryWithMovieList()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("http://localhost:5106/api/Movie");
+			var responseMessage = await client.GetAsync("http://localhost:5106/api/Category/CategoryWithMovieList");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<ResultMovieDto>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<ResultCategoryWithMovieDto>>(jsonData);
 				return View(values);
 			}
 			return View();

@@ -1,5 +1,5 @@
 ﻿@using Movies.WebUI.Dtos
-@model List<ResultMovieDto>
+@model List<ResultCategoryWithMovieDto>
 
 @* @foreach (var item in Model)
 {
@@ -18,18 +18,22 @@
 			<div class="slick-multiItemSlider">
 				@foreach (var item in Model)
 				{
-					<div class="movie-item">
-						<div class="mv-img">
-							<a href="#"><img src="/Film-Review-Movie-Database/images/uploads/slider1.jpg" alt="" width="285" height="437"></a>
-						</div>
-						<div class="title-in">
-							<div class="cate">
-								<span class="blue"><a href="#">@item.categoryId</a></span>
+					@foreach (var movie in item.movies)
+					{
+						<div class="movie-item">
+							<div class="mv-img">
+								<a href="#"><img src="/Film-Review-Movie-Database/images/uploads/slider1.jpg" alt="" width="285" height="437"></a>
 							</div>
-							<h6><a href="#">@item.movieName</a></h6>
-							<p><i class="ion-android-star"></i><span>@item.movieScore</span> /10</p>
+							<div class="title-in">
+								<div class="cate">
+									<span class="blue"><a href="#">@item.categoryName</a></span>
+								</div>
+								<h6><a href="#">@movie.MovieName</a></h6>
+								<p><i class="ion-android-star"></i><span>@movie.MovieScore</span> /10</p>
+							</div>
 						</div>
-					</div>
+					}
+					
 				}
 
 

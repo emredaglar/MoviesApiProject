@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Movies.BusinessLayer.Abstract;
+using Movies.DataAccessLayer.Concrete;
 using Movies.DtoLayer.CategoryDtos;
 using Movies.EntityLayer.Concrete;
 
@@ -56,7 +58,11 @@ namespace Movies.WebApi.Controllers
 			_categoryService.TUpdate(category);
 			return Ok("Güncelleme Başarılı");
 		}
-
-
+		[HttpGet("CategoryWithMovieList")]
+		public IActionResult CategoryWithMovieList()
+		{
+			var values = _categoryService.TCategoryWithMovies();
+			return Ok(values);
+		}
 	}
 }

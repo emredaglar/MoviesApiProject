@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Movies.BusinessLayer\Movies.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Movies.DataAccessLayer\Movies.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Movies.EntityLayer\Movies.EntityLayer.csproj" />
+    <ProjectReference Include="..\Movies.WebApi\Movies.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>
