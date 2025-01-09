@@ -18,5 +18,6 @@ namespace Movies.DataAccessLayer.Concrete
 
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Movie> Movies { get; set; }
+		public DbSet<Serie> Series { get; set; }
 	}
 }

@@ -13,5 +13,6 @@ namespace Movies.EntityLayer.Concrete
         public string ImageUrl { get; set; }
         public string Title { get; set; }
         public List<Movie> Movies { get; set; }
+        public List<Serie> Serie { get; set; }
     }
 }

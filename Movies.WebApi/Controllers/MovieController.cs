@@ -31,6 +31,7 @@ namespace Movies.WebApi.Controllers
 			movie.MovieImageUrl = createMovieDto.MovieImageUrl;
 			movie.CategoryId = createMovieDto.CategoryId;
 			movie.MovieScore = createMovieDto.MovieScore;
+			movie.MovieCreatedDate = createMovieDto.MovieCreatedDate;
 			_movieService.TInsert(movie);
 			return Ok("Ekleme Başarılı");
 		}
@@ -44,6 +45,7 @@ namespace Movies.WebApi.Controllers
 			movie.MovieImageUrl = updateMovieDto.MovieImageUrl;
 			movie.CategoryId = updateMovieDto.CategoryId;
 			movie.MovieScore = updateMovieDto.MovieScore;
+			movie.MovieCreatedDate = updateMovieDto.MovieCreatedDate;
 			_movieService.TUpdate(movie);
 			return Ok("Güncelleme Başarılı");
 		}

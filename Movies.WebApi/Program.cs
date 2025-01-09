@@ -11,12 +11,20 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<ICategoryService,CategoryManager>();
 builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
+
 builder.Services.AddScoped<IMovieService,MovieManager>();
 builder.Services.AddScoped<IMovieDal,EfMovieDal>();
+
 builder.Services.AddScoped<IGenericDal<Category>, GenericRepository<Category>>();
 builder.Services.AddScoped<IGenericService<Category>, GenericManager<Category>>();
+
 builder.Services.AddScoped<IGenericService<Movie>, GenericManager<Movie>>();
 builder.Services.AddScoped<IGenericDal<Movie>, GenericRepository<Movie>>();
+
+builder.Services.AddScoped<IGenericService<Serie>, GenericManager<Serie>>();
+builder.Services.AddScoped<IGenericDal<Serie>, GenericRepository<Serie>>();
+builder.Services.AddScoped<ISerieService, SerieManager>();
+builder.Services.AddScoped<ISerieDal, EfSerieDal>();
 
 builder.Services.AddDbContext<ApiContext>();
 builder.Services.AddControllers();
