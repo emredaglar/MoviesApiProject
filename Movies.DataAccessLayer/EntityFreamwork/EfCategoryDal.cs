@@ -34,7 +34,9 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 				Movies = category.Movies.Select(movie => new Movie
 				{
 					MovieId = movie.MovieId,
-					MovieName = movie.MovieName
+					MovieName = movie.MovieName,
+					MovieScore = movie.MovieScore
+					
 				}).ToList()
 			})
 		.ToList();

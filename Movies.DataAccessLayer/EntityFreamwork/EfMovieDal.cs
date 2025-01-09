@@ -16,6 +16,11 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 		{
 		}
 
+		public List<Movie> Last3Movie()
+		{
+			return _context.Movies.OrderByDescending(x => x.MovieId).Take(3).ToList();
+		}
+
 		public int MovieCount()
 		{
 			var context=new ApiContext();

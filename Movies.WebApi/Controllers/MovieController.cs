@@ -65,5 +65,11 @@ namespace Movies.WebApi.Controllers
 			var value= _movieService.TMovieCount();
 			return Ok(value);
 		}
+		[HttpGet("Last3Movie")]
+		public IActionResult Last3Movie()
+		{
+			var values= _movieService.TLast3Movie();
+			return Ok(values);
+		}
 	}
 }

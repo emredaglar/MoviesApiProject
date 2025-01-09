@@ -10,5 +10,6 @@ namespace Movies.BusinessLayer.Abstract
 	public interface IMovieService:IGenericService<Movie>
 	{
 		public int TMovieCount();
+		public List<Movie> TLast3Movie();
 	}
 }

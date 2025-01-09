@@ -10,7 +10,7 @@ namespace Movies.DataAccessLayer.Repositories
 {
 	public class GenericRepository<T> : IGenericDal<T> where T : class
 	{
-		private readonly ApiContext _context;
+		public ApiContext _context;
 
 		public GenericRepository(ApiContext context)
 		{

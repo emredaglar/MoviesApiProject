@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Movies.WebApi.Models;
 using Movies.WebUI.Dtos;
 using Newtonsoft.Json;
 

@@ -10,5 +10,6 @@ namespace Movies.DataAccessLayer.Abstract
 	public interface IMovieDal:IGenericDal<Movie>
 	{
 		public int MovieCount();
+		public List<Movie> Last3Movie();
 	}
 }

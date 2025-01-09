@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Movies.BusinessLayer.Abstract;
 using Movies.WebUI.Dtos;
 using Newtonsoft.Json;
-using System.Net.Http;
 
-namespace Movies.WebUI.Controllers
+namespace Movies.WebUI.ViewComponents.Movie
 {
-	public class MovieController : Controller
+	public class _Last3Movie:ViewComponent
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 
-		public MovieController(IHttpClientFactory httpClientFactory)
+		public _Last3Movie(IHttpClientFactory httpClientFactory)
 		{
 			_httpClientFactory = httpClientFactory;
 		}
 
-		public async Task<IActionResult> Last3Movie()
+		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var client = _httpClientFactory.CreateClient();
 			var responseMessage = await client.GetAsync("http://localhost:5106/api/Movie/Last3Movie");
@@ -26,6 +26,5 @@ namespace Movies.WebUI.Controllers
 			}
 			return View();
 		}
-
 	}
 }
