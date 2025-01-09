@@ -9,5 +9,6 @@ namespace Movies.DataAccessLayer.Abstract
 {
 	public interface ISerieDal:IGenericDal<Serie>
 	{
+		List<Serie> Last3Serie();
 	}
 }

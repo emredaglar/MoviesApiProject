@@ -2,7 +2,8 @@
 {
 	public class ResultSerieDto
 	{
-		public string serieName { get; set; }
+        public int serieId { get; set; }
+        public string serieName { get; set; }
 		public string serieImageUrl { get; set; }
 		public string serieDescription { get; set; }
 		public string serieScore { get; set; }

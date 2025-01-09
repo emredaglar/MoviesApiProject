@@ -11,8 +11,15 @@ namespace Movies.BusinessLayer.Concrete
 {
 	public class SerieManager : GenericManager<Serie>,ISerieService
 	{
-		public SerieManager(IGenericDal<Serie> genericDal) : base(genericDal)
-		{
-		}
-	}
+        private readonly ISerieDal _serieDal;
+        public SerieManager(IGenericDal<Serie> genericDal, ISerieDal serieDal) : base(genericDal)
+        {
+            _serieDal = serieDal;
+        }
+
+        public List<Serie> TLast3Serie()
+        {
+           return _serieDal.Last3Serie();
+        }
+    }
 }

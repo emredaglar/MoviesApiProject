@@ -9,5 +9,6 @@ namespace Movies.BusinessLayer.Abstract
 {
 	public interface ISerieService:IGenericService<Serie>
 	{
+		List<Serie> TLast3Serie();	
 	}
 }

@@ -15,5 +15,10 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 		public EfSerieDal(ApiContext context) : base(context)
 		{
 		}
-	}
+
+        public List<Serie> Last3Serie()
+        {
+           return _context.Series.OrderByDescending(x=>x.SerieId).Take(3).ToList();
+        }
+    }
 }

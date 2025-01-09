@@ -65,5 +65,11 @@ namespace Movies.WebApi.Controllers
 			_serieService.TDelete(id);
 			return Ok("Silme Başarılı");
 		}
+		[HttpGet("Last3Serie")]
+		public IActionResult Last3Serie()
+		{
+			var values=_serieService.TLast3Serie();
+			return Ok(values);
+		}
 	}
 }
