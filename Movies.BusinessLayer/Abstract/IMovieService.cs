@@ -1,4 +1,5 @@
-﻿using Movies.EntityLayer.Concrete;
+﻿using Movies.DtoLayer.MovieDtos;
+using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Movies.BusinessLayer.Abstract
 	{
 		public int TMovieCount();
 		public List<Movie> TLast3Movie();
+		public MovieWithCategoryDto TMovieWithCategory(int id);
 	}
 }

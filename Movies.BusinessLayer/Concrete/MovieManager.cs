@@ -1,6 +1,7 @@
 ﻿using Movies.BusinessLayer.Abstract;
 using Movies.DataAccessLayer.Abstract;
 using Movies.DataAccessLayer.EntityFreamwork;
+using Movies.DtoLayer.MovieDtos;
 using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace Movies.BusinessLayer.Concrete
 		public int TMovieCount()
 		{
 			return _movieDal.MovieCount();
+		}
+
+		public MovieWithCategoryDto TMovieWithCategory(int id)
+		{
+			return _movieDal.MovieWithCategory(id);
 		}
 	}
 }

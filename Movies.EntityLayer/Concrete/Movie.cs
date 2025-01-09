@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Movies.EntityLayer.Concrete
@@ -15,6 +16,7 @@ namespace Movies.EntityLayer.Concrete
         public string? MovieScore { get; set; }
         public string? MovieCreatedDate{ get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+		[JsonIgnore]
+		public Category Category { get; set; }
     }
 }

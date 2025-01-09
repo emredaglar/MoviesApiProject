@@ -1,4 +1,5 @@
-﻿using Movies.EntityLayer.Concrete;
+﻿using Movies.DtoLayer.MovieDtos;
+using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Movies.DataAccessLayer.Abstract
 	{
 		public int MovieCount();
 		public List<Movie> Last3Movie();
+		public MovieWithCategoryDto MovieWithCategory(int id);
 	}
 }

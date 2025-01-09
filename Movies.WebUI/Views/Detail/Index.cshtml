@@ -1,4 +1,5 @@
-﻿
+﻿@using Movies.DtoLayer.MovieDtos
+@model MovieWithCategoryDto
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UILayout.cshtml";
@@ -36,7 +37,7 @@
 			</div>
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="movie-single-ct main-content">
-					<h1 class="bd-hd">Skyfall: Quantum of Spectre <span>2015</span></h1>
+					<h1 class="bd-hd">@Model.MovieName <span> 2015</span></h1>
 					<div class="social-btn">
 						<a href="#" class="parent-btn"><i class="ion-heart"></i> Favorilere Ekle</a>
 						<div class="hover-bnt">
@@ -53,7 +54,7 @@
 						<div class="rate">
 							<i class="ion-android-star"></i>
 							<p>
-								<span>8.1</span> /10<br>
+								<span>@Model.MovieScore</span> /10<br>
 								<span class="rv">56 puanlama</span>
 							</p>
 						</div>
@@ -83,7 +84,7 @@
 								<div id="overview" class="tab active">
 									<div class="row">
 										<div class="col-md-8 col-sm-12 col-xs-12">
-											<p>    Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes must come together once again to protect the world from global extinction.</p>
+											<p> @Model.MovieDescription</p>
 											<p>    Tony Stark creates the Ultron Program to protect the world, but when the peacekeeping program becomes hostile, The Avengers go into action to try and defeat a virtually impossible enemy together. Earth's mightiest heroes must come together once again to protect the world from global extinction.</p>
 
 										</div>
@@ -95,8 +96,8 @@
 											</div>
 											
 											<div class="sb-it">
-												<h6>Konu:</h6>
-												<p><a href="#">Action, </a> <a href="#"> Sci-Fi,</a> <a href="#">Adventure</a></p>
+												<h6>Kategori:</h6>
+												<p><a href="#">@Model.CategoryName</a></p>
 											</div>
 											<div class="sb-it">
 												<h6>Çıkış Tarihi:</h6>
