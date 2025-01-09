@@ -71,5 +71,11 @@ namespace Movies.WebApi.Controllers
 			var values=_serieService.TLast3Serie();
 			return Ok(values);
 		}
+		[HttpGet("SerieWithCategory")]
+		public IActionResult SerieWithCategory(int id)
+		{
+			var values = _serieService.TSerieWithCategory(id);
+			return Ok(values);
+		}
 	}
 }

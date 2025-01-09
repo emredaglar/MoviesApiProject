@@ -1,5 +1,6 @@
 ﻿using Movies.BusinessLayer.Abstract;
 using Movies.DataAccessLayer.Abstract;
+using Movies.DtoLayer.SerieDto;
 using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,10 @@ namespace Movies.BusinessLayer.Concrete
         {
            return _serieDal.Last3Serie();
         }
-    }
+
+		public SerieWithCategoryDto TSerieWithCategory(int id)
+		{
+			return _serieDal.SerieWithCategory(id);
+		}
+	}
 }

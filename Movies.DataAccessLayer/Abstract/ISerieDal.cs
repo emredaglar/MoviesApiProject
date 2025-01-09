@@ -1,4 +1,5 @@
-﻿using Movies.EntityLayer.Concrete;
+﻿using Movies.DtoLayer.SerieDto;
+using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace Movies.DataAccessLayer.Abstract
 	public interface ISerieDal:IGenericDal<Serie>
 	{
 		List<Serie> Last3Serie();
+		SerieWithCategoryDto SerieWithCategory(int id);
 	}
 }

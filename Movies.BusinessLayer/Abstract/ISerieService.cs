@@ -1,4 +1,5 @@
-﻿using Movies.EntityLayer.Concrete;
+﻿using Movies.DtoLayer.SerieDto;
+using Movies.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Movies.BusinessLayer.Abstract
 {
 	public interface ISerieService:IGenericService<Serie>
 	{
-		List<Serie> TLast3Serie();	
+		List<Serie> TLast3Serie();
+		SerieWithCategoryDto TSerieWithCategory(int id);
 	}
 }
