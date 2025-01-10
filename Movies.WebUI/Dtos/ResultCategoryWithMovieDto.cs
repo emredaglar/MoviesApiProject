@@ -9,7 +9,7 @@ namespace Movies.WebUI.Dtos
 
         public int categoryId { get; set; }
         public string categoryName { get; set; }
-        public Movie[] movies { get; set; }
+        public List<Movie> movies { get; set; }
 
 
 

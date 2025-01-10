@@ -23,6 +23,11 @@ namespace Movies.BusinessLayer.Concrete
             return _categoryDal.CategoryCount();
         }
 
+        public List<CategoryWithMoviesDto> TCategorysWithMovies(int id)
+        {
+            return _categoryDal.CategorysWithMovies(id);
+        }
+
         public List<Category> TCategoryWithMovie()
         {
             return _categoryDal.CategoryWithMovie();
