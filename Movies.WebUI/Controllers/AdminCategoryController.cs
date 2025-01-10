@@ -1,30 +1,28 @@
-﻿
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Movies.WebUI.Dtos;
 using Newtonsoft.Json;
 
-namespace Core_App.ViewComponents.Dashboard
+namespace Movies.WebUI.Controllers
 {
-    public class Last5Project : ViewComponent
+    public class AdminCategoryController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public Last5Project(IHttpClientFactory httpClientFactory)
+        public AdminCategoryController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IActionResult> CategoryList()
         {
             var client = _httpClientFactory.CreateClient();
 
-            var responseMessage = await client.GetAsync("http://localhost:5106/api/Movie/Last5Movie");
+            var responseMessage = await client.GetAsync("http://localhost:5106/api/Category");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultMovieDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
                 return View(values);
-
             }
             return View();
         }

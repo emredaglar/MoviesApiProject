@@ -12,6 +12,7 @@ namespace Movies.DataAccessLayer.Abstract
 	{
 		public int MovieCount();
 		public List<Movie> Last3Movie();
+		public List<Movie> Last5Movie();
 		public MovieWithCategoryDto MovieWithCategory(int id);
 	}
 }

@@ -1,0 +1,43 @@
+﻿@using Movies.WebUI.Dtos
+@model List<ResultCategoryDto>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+} 
+<h3>Kategori Listesi</h3>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> KATEGORİ </th>
+                                <th> KATEGORİ DÜZENLE  </th>
+                                <th> KATEGORİ SİL </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>
+                                        @item.categoryId
+                                    </th>
+                                    <td> @item.categoryName </td>
+
+                                    <td> <a href="/AdminCategory/UpdateAdmin/@item.categoryId" class="btn btn-outline-warning btn-fw">Düzenle</a> </td>
+                                    <td> <a href="/AdminCategory/DeleteAdmin/@item.categoryId" class="btn btn-outline-danger btn-fw">Sil</a> </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <a href="/AdminCategory/CreateAdmin" class="btn btn-outline-success btn-fw">Yeni Kategori Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

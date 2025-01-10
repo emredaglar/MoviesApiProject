@@ -102,7 +102,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#ffffff";
       
-          var text = "$1200", 
+          var text = "256", 
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2.4;
       
@@ -115,7 +115,7 @@
           ctx.textBaseline = "middle";
           ctx.fillStyle = "#6c7293";
 
-          var texts = "Total", 
+          var texts = "Toplam", 
               textsX = Math.round((width - ctx.measureText(text).width) / 1.93),
               textsY = height / 1.7;
       

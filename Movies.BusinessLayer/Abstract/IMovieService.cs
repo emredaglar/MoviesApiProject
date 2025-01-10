@@ -12,6 +12,7 @@ namespace Movies.BusinessLayer.Abstract
 	{
 		public int TMovieCount();
 		public List<Movie> TLast3Movie();
+		public List<Movie> TLast5Movie();
 		public MovieWithCategoryDto TMovieWithCategory(int id);
 	}
 }

@@ -24,7 +24,12 @@ namespace Movies.BusinessLayer.Concrete
 			return _movieDal.Last3Movie();
 		}
 
-		public int TMovieCount()
+        public List<Movie> TLast5Movie()
+        {
+            return _movieDal.Last5Movie();
+        }
+
+        public int TMovieCount()
 		{
 			return _movieDal.MovieCount();
 		}
