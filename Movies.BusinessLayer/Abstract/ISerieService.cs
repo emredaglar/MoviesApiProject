@@ -12,5 +12,6 @@ namespace Movies.BusinessLayer.Abstract
 	{
 		List<Serie> TLast3Serie();
 		SerieWithCategoryDto TSerieWithCategory(int id);
+		int SerieCount();
 	}
 }

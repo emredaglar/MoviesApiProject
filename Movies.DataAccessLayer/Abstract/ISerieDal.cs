@@ -12,5 +12,6 @@ namespace Movies.DataAccessLayer.Abstract
 	{
 		List<Serie> Last3Serie();
 		SerieWithCategoryDto SerieWithCategory(int id);
+		int SerieCount();
 	}
 }

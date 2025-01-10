@@ -12,6 +12,7 @@ namespace Movies.DataAccessLayer.Abstract
 	{
 		List<Category> CategoryWithMovie();
 		List<CategoryWithMoviesDto> CategoryWithMovies();
+		int CategoryCount();
 
     }
 }

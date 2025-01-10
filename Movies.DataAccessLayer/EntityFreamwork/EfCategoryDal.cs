@@ -19,7 +19,12 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 		{
 		}
 
-		public List<Category> CategoryWithMovie()
+        public int CategoryCount()
+        {
+          return _context.Categories.Count();
+        }
+
+        public List<Category> CategoryWithMovie()
 		{
 			var values = context.Categories.Include(x => x.Movies).ToList();
 			return values;

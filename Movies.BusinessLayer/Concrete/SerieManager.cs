@@ -18,6 +18,11 @@ namespace Movies.BusinessLayer.Concrete
             _serieDal = serieDal;
         }
 
+        public int SerieCount()
+        {
+           return _serieDal.SerieCount();
+        }
+
         public List<Serie> TLast3Serie()
         {
            return _serieDal.Last3Serie();

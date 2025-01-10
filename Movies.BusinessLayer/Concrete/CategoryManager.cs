@@ -18,6 +18,11 @@ namespace Movies.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
+        public int TCategoryCount()
+        {
+            return _categoryDal.CategoryCount();
+        }
+
         public List<Category> TCategoryWithMovie()
         {
             return _categoryDal.CategoryWithMovie();

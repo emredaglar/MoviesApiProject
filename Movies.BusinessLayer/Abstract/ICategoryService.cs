@@ -12,6 +12,7 @@ namespace Movies.BusinessLayer.Abstract
 	{
         List<Category> TCategoryWithMovie();
         List<CategoryWithMoviesDto> TCategoryWithMovies();
+        int TCategoryCount();
 
     }
 }

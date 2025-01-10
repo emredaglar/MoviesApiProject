@@ -77,5 +77,11 @@ namespace Movies.WebApi.Controllers
 			var values = _serieService.TSerieWithCategory(id);
 			return Ok(values);
 		}
+		[HttpGet("SerieCount")]
+		public IActionResult SerieCount()
+		{
+			var value=_serieService.SerieCount();
+			return Ok(value);
+		}
 	}
 }

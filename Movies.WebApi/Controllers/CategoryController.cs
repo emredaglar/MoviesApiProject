@@ -64,5 +64,11 @@ namespace Movies.WebApi.Controllers
 			var values = _categoryService.TCategoryWithMovies();
 			return Ok(values);
 		}
-	}
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            var values = _categoryService.TCategoryCount();
+            return Ok(values);
+        }
+    }
 }

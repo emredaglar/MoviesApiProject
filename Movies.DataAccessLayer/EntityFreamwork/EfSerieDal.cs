@@ -23,7 +23,12 @@ namespace Movies.DataAccessLayer.EntityFreamwork
            return _context.Series.OrderByDescending(x=>x.SerieId).Take(3).ToList();
         }
 
-		public SerieWithCategoryDto SerieWithCategory(int id)
+        public int SerieCount()
+        {
+           return _context.Series.Count();
+        }
+
+        public SerieWithCategoryDto SerieWithCategory(int id)
 		{
 			var value = _context.Series
 		.Include(x => x.Category)
