@@ -40,7 +40,10 @@ namespace Movies.DataAccessLayer.EntityFreamwork
                 {
                     MovieId = movie.MovieId,
                     MovieName = movie.MovieName,
-                    MovieScore = movie.MovieScore
+                    MovieScore = movie.MovieScore,
+                    MovieDescription = movie.MovieDescription,
+                    MovieImageUrl = movie.MovieImageUrl,
+                    MovieCreatedDate = movie.MovieCreatedDate
 
                 }).ToList()
             })
