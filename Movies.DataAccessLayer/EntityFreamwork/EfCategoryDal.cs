@@ -51,6 +51,27 @@ namespace Movies.DataAccessLayer.EntityFreamwork
 
             return values;
         }
+        public List<CategoryWithSerieDto> CategoryWithSerie()
+        {
+            var values = context.Categories.Include(x => x.Serie).Select(category => new CategoryWithSerieDto
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                Series = category.Serie.Select(serie => new Serie
+                {
+                    SerieId = serie.SerieId,
+                    SerieName = serie.SerieName,
+                    SerieScore = serie.SerieScore,
+                    SerieDescription = serie.SerieDescription,
+                    SerieImageUrl = serie.SerieImageUrl,
+                    SerieCreatedDate = serie.SerieCreatedDate
+
+                }).ToList()
+            })
+        .ToList();
+
+            return values;
+        }
         public List<CategoryWithMoviesDto> CategorysWithMovies(int id)
         {
             var values = context.Categories.Include(x => x.Movies).Where(x => x.CategoryId == id).Select(category => new CategoryWithMoviesDto
@@ -65,6 +86,27 @@ namespace Movies.DataAccessLayer.EntityFreamwork
                     MovieImageUrl = movie.MovieImageUrl,
                     MovieCreatedDate = movie.MovieCreatedDate,
                     MovieDescription = movie.MovieDescription
+
+                }).ToList()
+            })
+        .ToList();
+
+            return values;
+        }
+        public List<CategoryWithSerieDto> CategorysWithSeries(int id)
+        {
+            var values = context.Categories.Include(x => x.Serie).Where(x => x.CategoryId == id).Select(category => new CategoryWithSerieDto
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                Series = category.Serie.Select(serie => new Serie
+                {
+                    SerieId = serie.SerieId,
+                    SerieName = serie.SerieName,
+                    SerieScore = serie.SerieScore,
+                    SerieDescription = serie.SerieDescription,
+                    SerieImageUrl = serie.SerieImageUrl,
+                    SerieCreatedDate = serie.SerieCreatedDate
 
                 }).ToList()
             })

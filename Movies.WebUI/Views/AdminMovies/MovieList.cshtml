@@ -3,16 +3,16 @@
 @{
     ViewData["Title"] = "MovieList";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    
 }
 
-@foreach (var item in Model)
-{
+
 <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <a href="/x/x" class="btn btn-outline-primary" style="float: right; margin-top: 20px;"><i class="mdi mdi-plus-box"></i> Kategoriye Ait İçerik Ekle</a>
-                    <h4 class="card-title">@item.categoryName İçerikleri</h4>
+                    <a href="/AdminMovies/CreateMovie/" class="btn btn-outline-primary" style="float: right; margin-top: 20px;"><i class="mdi mdi-plus-box"></i> Yeni Film Ekle</a>
+                    <h2 class="card-title">Filmler</h2>
                     <div class="table-responsive">
                         <br />
                         <table class="table table-bordered table-hover" style="color:white;">
@@ -20,14 +20,17 @@
                                 <tr>
                                     <th scope="col" class="sort" data-sort="name">#</th>
                                     <th scope="col" class="sort" data-sort="status">Kapak</th>
-                                    <th scope="col" class="sort" data-sort="budget">İsmi</th>
-                                    <th scope="col" class="sort" data-sort="status">Başlık</th>
+                                    <th scope="col" class="sort" data-sort="budget">Film Adı</th>
+                                    <th scope="col" class="sort" data-sort="status">Puan</th>
+                                    <th scope="col" class="sort" data-sort="status">Konu</th>
                                     
 
                                     <th scope="col" class="sort text-center" data-sort="completion">İşlemler</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach (var item in Model)
+                            {
                                 @foreach (var x in item.movies)
                                 {
                                     <tr>
@@ -38,11 +41,13 @@
                                         <td>@item.categoryName</td>
                                         
                                         <td class="text-center">
-                                            <a href="/x/x/" class="btn btn-outline-danger" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a>
-                                            <a href="/x/x/" class="btn btn-outline-info" style="margin-left:25px;"><i class="ni ni-scissors"></i> Güncelle</a>
+                                            <a href="/AdminMovies/DeleteMovie/@x.MovieId" class="btn btn-outline-danger" onclick="return confirm('Silmek istediğinize emin misiniz?');"><i class="ni ni-fat-remove"></i> Sil</a>
+                                            <a href="/AdminMovies/UpdateMovie/@x.MovieId" class="btn btn-outline-info" style="margin-left:25px;"><i class="ni ni-scissors"></i> Güncelle</a>
+                                            <a href="/Detail/Index/@x.MovieId" class="btn btn-outline-secondary" style="margin-left:25px;"><i class="ni ni-scissors"></i> Detay</a>
                                         </td>
                                     </tr>
                                 }
+                            }
                             </tbody>
                         </table>
                     </div>
@@ -50,4 +55,3 @@
             </div>
         </div>
     </div>
-}

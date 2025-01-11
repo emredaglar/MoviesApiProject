@@ -12,7 +12,9 @@ namespace Movies.BusinessLayer.Abstract
 	{
         List<Category> TCategoryWithMovie();
         List<CategoryWithMoviesDto> TCategoryWithMovies();
+        List<CategoryWithSerieDto> TCategoryWithSerie();
         List<CategoryWithMoviesDto> TCategorysWithMovies(int id);
+        List<CategoryWithSerieDto> TCategorysWithSeries(int id);
         int TCategoryCount();
 
     }

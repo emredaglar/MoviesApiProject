@@ -28,6 +28,11 @@ namespace Movies.BusinessLayer.Concrete
             return _categoryDal.CategorysWithMovies(id);
         }
 
+        public List<CategoryWithSerieDto> TCategorysWithSeries(int id)
+        {
+            return _categoryDal.CategorysWithSeries(id);
+        }
+
         public List<Category> TCategoryWithMovie()
         {
             return _categoryDal.CategoryWithMovie();
@@ -36,6 +41,11 @@ namespace Movies.BusinessLayer.Concrete
         public List<CategoryWithMoviesDto> TCategoryWithMovies()
         {
             return _categoryDal.CategoryWithMovies();
+        }
+
+        public List<CategoryWithSerieDto> TCategoryWithSerie()
+        {
+           return _categoryDal.CategoryWithSerie();
         }
     }
 }

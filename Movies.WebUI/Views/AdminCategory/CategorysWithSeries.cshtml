@@ -1,16 +1,19 @@
 ﻿@using Movies.WebUI.Dtos
-@model List<ResultCategoryWithMovieDto>
+@model List<ResultCategoryWithSerieDto>
+
 @{
-    ViewData["Title"] = "CategorysWithMovies";
+    ViewData["Title"] = "CategorysWithSeries";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
+
+
 
 <div class="col-lg-12 d-flex align-items-stretch">
     <div class="card w-100">
         <div class="card-body p-4">
-           
+
             <div class="category-header d-flex align-items-center mb-4">
-                
+
                 <h3 class="category-title ms-3">@Model.FirstOrDefault()?.categoryName - Kategori Filmleri</h3>
             </div>
 
@@ -18,12 +21,12 @@
             <div class="product-list">
                 @foreach (var item in Model)
                 {
-                    @foreach (var movies in item.movies)
+                    @foreach (var movies in item.series)
                     {
                         <div class="product-card mb-3">
                             <div class="product-info d-flex flex-column align-items-center">
-                                <img src="@movies.MovieImageUrl" alt="@movies.MovieName" class="product-image" />
-                                <h6 class="product-name mt-2">@movies.MovieName</h6>
+                                <img src="@movies.SerieImageUrl" alt="@movies.SerieName" class="product-image" />
+                                <h6 class="product-name mt-2">@movies.SerieName </h6>
                             </div>
                         </div>
                     }
@@ -110,7 +113,7 @@
 
 
 
-@* 
+@*
 @foreach (var item in Model)
 {
 
@@ -157,3 +160,5 @@
         </div>
     </div>
 } *@
+
+

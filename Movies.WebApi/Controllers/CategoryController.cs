@@ -64,10 +64,22 @@ namespace Movies.WebApi.Controllers
 			var values = _categoryService.TCategoryWithMovies();
 			return Ok(values);
 		}
+        [HttpGet("CategoryWithSerieList")]
+        public IActionResult CategoryWithSerieList()
+        {
+            var values = _categoryService.TCategoryWithSerie();
+            return Ok(values);
+        }
         [HttpGet("CategorysWithMovieList")]
         public IActionResult CategorysWithMovieList(int id)
         {
             var values = _categoryService.TCategorysWithMovies(id);
+            return Ok(values);
+        }
+        [HttpGet("CategorysWithSerieList")]
+        public IActionResult CategorysWithSerieList(int id)
+        {
+            var values = _categoryService.TCategorysWithSeries(id);
             return Ok(values);
         }
         [HttpGet("CategoryCount")]

@@ -37,5 +37,17 @@ namespace Movies.WebUI.Controllers
 			}
 			return View();
 		}
-	}
+        public async Task<IActionResult> CategoryWithSerieList()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5106/api/Category/CategoryWithSerieList");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultCategoryWithSerieDto>>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
+    }
 }
