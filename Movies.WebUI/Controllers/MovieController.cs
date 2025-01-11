@@ -26,6 +26,18 @@ namespace Movies.WebUI.Controllers
 			}
 			return View();
 		}
+        public async Task<IActionResult> MovieList()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5106/api/Movie");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultMovieDto>>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
 
-	}
+    }
 }

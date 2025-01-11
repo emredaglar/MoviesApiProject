@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+    int count = 0;
 }
 
 <div class="row">
@@ -31,8 +32,9 @@
                             {
                                 @foreach (var x in item.series)
                                 {
+                                    count++;
                                     <tr>
-                                        <td>@x.SerieId</td>
+                                        <td>@count</td>
                                         <td><image style="width:80px; height:80px;" src="@x.SerieImageUrl"></image></td>
                                         <td>@x.SerieName</td>
                                         <td>@x.SerieScore</td>
