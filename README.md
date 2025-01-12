@@ -41,6 +41,9 @@ Kullanıcılar Film ve Dizi ile ilgili bilgilere,fragman gibi detaylara ulaşabi
 -
 ![4](https://github.com/user-attachments/assets/e7899dfa-25f7-45ae-8e5f-0295580f0810)
 -
+###  Swagger
+![14](https://github.com/user-attachments/assets/1d94c79d-c2ce-4f5d-8fe4-ad85e378bb4c)
+
 ### 🔑 Admin Paneli
 
 ![5](https://github.com/user-attachments/assets/72a6cb7f-f807-49d3-9ece-97a2d28ffe5c)
