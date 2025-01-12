@@ -2,7 +2,7 @@
 
 🌟 Bu proje Film ve Diziler hakkında bilgi alabileceğiniz, Admin panelli dinamik bir API projesidir. 
 Projedeki backend yapısı tamamen N katmanlı mimaride API'ler ile geliştirilmiştir ve frontend tarafı bu API'ler kullanılarak hazırlanmıştır.
-Kullanıcılar Film ve Dizi ile ilgili bilgilere,fragman gibi detaylara ulaşabilir. Admin tarafında ise kullanıcı arayüzündeki bilgilerin yönetilebilir olması sağlanmıştır.
+Kullanıcılar Film ve Dizi ile ilgili bilgilere,fragman gibi detaylara ulaşabilir, kategori yada tür bazlı filtreleme yapabilir. Admin tarafında ise kullanıcı arayüzündeki bilgilerin yönetilebilir olması sağlanmıştır.
 
 
 🏠 Web Sitesi
